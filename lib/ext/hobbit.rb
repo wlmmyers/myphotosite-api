@@ -1,5 +1,3 @@
-require_relative '../helpers/authorization_helpers'
-
 # This API will only output json responses.
 module Hobbit
   class Base

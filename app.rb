@@ -5,6 +5,7 @@ require 'rack/parser'
 require 'rack/protection'
 require 'hobbit'
 require 'rest-client'
+require 'shellwords'
 
 Dotenv.load
 
@@ -34,9 +35,4 @@ end
 
 def test?
   ENV['RACK_ENV'] == 'test'
-end
-
-unless development? || test?
-  NewRelic::Agent.manual_start
-  NewRelic::Agent.after_fork(force_reconnect: true)
 end
